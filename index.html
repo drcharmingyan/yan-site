@@ -800,6 +800,49 @@ footer{padding-top:20px}
 .ab-cv h3{font-family:var(--body);font-size:17px;color:var(--rose);margin-bottom:8px}
 .ab-cv ul{padding-left:20px}.ab-cv li{font-size:15.5px;margin-bottom:5px;line-height:1.7}
 .ab-go{text-align:center;margin-top:18px}
+
+/* 筆友計畫方案區：影音版為主角 */
+.pp-plans3.pp-vplans{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pp-vplans .plan.pv-second{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:6px 28px;align-items:center;padding:20px 28px}
+.pp-vplans .plan.pv-second .pf-l,.pp-vplans .plan.pv-second .pf-r{display:flex;flex-direction:column}
+.pp-vplans .plan.pv-second h3{font-size:18px}
+.pp-vplans .plan.pv-second .price{font-size:38px}
+.pp-vplans .pv-tag{font-size:13.5px}
+.pp-vplans .pv-note{grid-column:1/-1;margin:2px 4px 0;font-size:13px;line-height:1.7;color:var(--ink-soft);text-align:center}
+.pp-vplans .pv-textlabel{grid-column:1/-1;margin:14px 0 -2px;font-size:14px;font-weight:700;color:var(--ink-soft);text-align:center}
+.pp-vplans .plan.pt-small{padding:14px 16px;box-shadow:none}
+.pp-vplans .plan.pt-small h3{font-size:15.5px}
+.pp-vplans .plan.pt-small .price{font-size:24px;margin:4px 0 0}
+.pp-vplans .plan.pt-small .h3-price{font-size:16px}
+@media (max-width:760px){
+.pp-plans3.pp-vplans{grid-template-columns:minmax(0,1fr)}
+.pp-vplans .plan.pv-second{grid-template-columns:1fr;padding:18px 20px}
+.pp-vplans .plan.pt-small{padding:12px 16px}
+.pp-vplans .plan.pt-small .h3-price{display:inline;margin-left:8px}
+}
+.pp-vplans .plan{min-width:0}
+.pp-vplans .pf-l,.pp-vplans .pf-r{min-width:0}
+.pp-vplans .pv-sub{margin:2px 0 0;font-size:14px;font-weight:700;color:var(--ink-soft)}
+.pp-vplans .plan.pt-small{display:flex;flex-direction:column}
+/* 1,911 主推卡：藍色 */
+.pp-vplans .plan.feature.pv-blue{border-color:#4F78A8;background:#F4F8FC;box-shadow:0 10px 26px rgba(79,120,168,.18)}
+.pp-vplans .pv-blue .pv-tag{color:#3D6491;background:#E1EBF6}
+.pp-vplans .pv-blue .price{color:#3D6491}
+.pp-vplans .pv-blue .pv-sub b,.pp-vplans .pv-blue li b{color:#3D6491}
+.pp-vplans .pv-big{font-size:46px;margin-left:14px;vertical-align:-4px;line-height:1}
+.pp-vplans .nw{white-space:nowrap}
+.pp-vplans .pv-hl{color:#3D6491;font-size:1.25em;font-weight:800}
+.pp-vplans .pv-hl2{color:#3D6491;font-weight:800}
+/* 筆友計畫：影音版預購區塊 */
+.pp-video{margin:14px 0 4px;padding:16px 20px;background:var(--card);border:1.5px dashed var(--line);border-radius:16px;text-align:center}
+.pp-video p{margin:0}
+.pp-video .pv-t{font-weight:700;color:var(--ink);font-size:15.5px}
+.pp-video .pv-p{margin-top:8px;font-size:15px;color:var(--ink)}
+.pp-video .pv-p b{font-size:17px}
+.pp-video .pv-n{margin-top:8px;font-size:13px;line-height:1.7;color:var(--ink-soft)}
+.pp-video.pv-modal{margin:16px 0 0;text-align:left}
+@media (max-width:600px){.pp-video .pv-sep{display:block;height:0;overflow:hidden}.pp-video{padding:14px 14px}}
+
 /* 首頁：套用筆友計畫頁配色 */
 #room-home .hm-hero{background:linear-gradient(180deg,var(--blush) 0%,var(--paper) 100%);padding:34px 0 30px;border-bottom:1px solid var(--line)}
 #room-home .hm-welcome{background:none;border:0;padding:0}
@@ -1237,27 +1280,29 @@ body:has(#room-home:not([hidden])){background:var(--card)}
     <div class="wrap">
       <span class="eyebrow">選擇你的方案</span>
       <h2>把 32 封信帶回去，需要的時候慢慢讀</h2>
-      <div class="plans pp-plans3">
-      <div class="plan feature">
+      <div class="plans pp-plans3 pp-vplans">
+      <div class="plan feature pv-blue">
         <div class="pf-l">
-        <h3>💌 兩季一起｜32 封信</h3>
-        <p class="price"><small>NT$</small>1,395 <s>NT$1,442</s></p>
+        <span class="plan-date pv-tag">🎬 影音版・限時預購到 11/30（一）23:59</span>
+        <h3><span class="nw">第一季 15 支講解影片</span>｜<span class="nw pv-hl">共 75 分鐘以上</span></h3><p class="pv-sub">＋兩季 32 封文字信</p>
+        <p class="price"><small>NT$</small>1,911<span class="pv-big" aria-hidden="true">🎬</span></p>
         </div>
         <div class="pf-r">
-        <ul><li>兩季一起收藏，從重新打開論文，到把研究寫成論文</li></ul>
-        <a class="btn wide js-pay pp-ref" hidden data-plan="bundle" href="#pp-plans" target="_blank" rel="noopener">收藏 32 封信 →</a>
+        <ul><li>每支 <b class="pv-hl2">5–7 分鐘</b>，不是把信念一遍，是重新講解每封信的核心概念</li><li>再加上兩季 32 封文字信，從重新打開論文，到把研究寫成論文</li></ul>
         </div>
       </div>
-      <div class="plan">
+      <p class="pv-note">影片 2027/1/11 開始寄，3/17 前完成 15 支，可觀看到 2028/6/30。如果影片沒有如期開始或完成，影音部分退還 500 元，文字信照常寄給你。</p>
+      
+      <div class="plan pt-small">
         <span class="plan-date">12/14（一）開始</span>
-        <h3>🌸 第一季｜15 封信<span class="h3-price">NT$695</span></h3>
-        <ul><li>論文焦慮、和 AI 協作、與指導教授溝通、準備口試</li></ul>
+        <h3>🌸 第一季｜15 封信</h3>
+        <p class="price"><small>NT$</small>717</p>
         <a class="btn wide ghost js-pay pp-ref" hidden data-plan="s1" href="#pp-plans" target="_blank" rel="noopener">只收第一季 →</a>
       </div>
-      <div class="plan">
+      <div class="plan pt-small">
         <span class="plan-date">12/12（六）開始</span>
-        <h3>🌿 第二季｜17 封信<span class="h3-price">NT$747</span></h3>
-        <ul><li>研究問題、文獻對話、研究方法、論證寫作與修稿</li></ul>
+        <h3>🌿 第二季｜17 封信</h3>
+        <p class="price"><small>NT$</small>777</p>
         <a class="btn wide ghost js-pay pp-ref" hidden data-plan="s2" href="#pp-plans" target="_blank" rel="noopener">只收第二季 →</a>
       </div>
       </div>
@@ -1936,7 +1981,7 @@ body:has(#room-home:not([hidden])){background:var(--card)}
         <div class="tl-next2-go">
           <a class="tl-more-btn pp-self" href="https://docs.google.com/forms/d/e/1FAIpQLSe6nFwoqQarZOfhfHRb49kuWzvI9Rt6cuwFDgkrqPi-LY_wBA/viewform?usp=header" target="_blank" rel="noopener">我想讀第二封信 →</a>
           <a class="tl-more-btn js-pay pp-ref" hidden data-plan="bundle" href="#pp-plans" target="_blank" rel="noopener">我想讀第二封信 →</a>
-          <p class="single pp-ref tl-ref-single" hidden><span>只想先讀其中一季？</span><a class="js-pay sbtn" data-plan="s1" href="#pp-plans" target="_blank" rel="noopener">第一季 NT$695</a><a class="js-pay sbtn" data-plan="s2" href="#pp-plans" target="_blank" rel="noopener">第二季 NT$747</a></p>
+          <p class="single pp-ref tl-ref-single" hidden><span>只想先讀其中一季？</span><a class="js-pay sbtn" data-plan="s1" href="#pp-plans" target="_blank" rel="noopener">第一季 NT$717</a><a class="js-pay sbtn" data-plan="s2" href="#pp-plans" target="_blank" rel="noopener">第二季 NT$777</a></p>
           <p class="tl-more-note">每一封信都附學習單和 AI prompt</p>
           <p class="tl-proof">🌷 已經有 <b>140+</b> 位筆友在路上了</p>
         </div>
@@ -1984,11 +2029,11 @@ body:has(#room-home:not([hidden])){background:var(--card)}
   <div class="sb-in">
     <div class="sb-t" data-for="meetup"><b>AI × 學術小聚<em class="sb-tag">回顧</em></b><span>10–11 月・7 場已圓滿結束</span></div>
     <a class="sb-btn" data-for="meetup" href="#events">看近期活動</a>
-    <div class="sb-t" data-for="penpal" hidden><b id="pp-sbt">學術筆友計畫｜32 封信 NT$1,395</b><span class="js-cd-short">第一封信寄出倒數</span></div>
+    <div class="sb-t" data-for="penpal" hidden><b id="pp-sbt">學術筆友計畫｜32 封信 NT$1,450</b><span class="js-cd-short">第一封信寄出倒數</span></div>
     <a class="sb-btn js-pay" id="pp-sbb" data-for="penpal" data-plan="bundle" href="#pp-plans" target="_blank" rel="noopener" hidden>收藏 32 封信</a>
     <div class="sb-t" data-for="ws" hidden><b>AI × 學術研究系列工作坊<em class="sb-tag">線上</em></b><span>11/28 起・五個場次｜<b class="sb-on">NT$1,111 起</b></span></div>
     <div class="sb-t" data-for="prep" hidden><b>AI × 學術小聚<em class="sb-tag">NT$555</em></b><span>12/5 備課・12/26 簡報口試｜<b class="sb-on">線上</b></span></div>
-    <div class="sb-t" data-for="letter" hidden><b id="lt-sbt">學術筆友計畫｜單季 NT$695 起</b><span class="js-cd-short">第一封信寄出倒數</span></div>
+    <div class="sb-t" data-for="letter" hidden><b id="lt-sbt">學術筆友計畫｜單季 NT$717 起</b><span class="js-cd-short">第一封信寄出倒數</span></div>
     <a class="sb-btn" id="lt-sbb" data-for="letter" href="https://docs.google.com/forms/d/e/1FAIpQLSe6nFwoqQarZOfhfHRb49kuWzvI9Rt6cuwFDgkrqPi-LY_wBA/viewform?usp=header" target="_blank" rel="noopener" hidden>開始收信</a>
     <a class="sb-btn" data-for="prep" href="#prep-signup" hidden>我想參加</a>
     <a class="sb-btn js-wsform" data-for="ws" href="#" target="_blank" rel="noopener" hidden>我要報名</a>
@@ -2030,10 +2075,10 @@ var REMIT = "https://docs.google.com/forms/d/e/1FAIpQLSderj6vESCafGO5p6hPQYG9YdX
     document.querySelectorAll('.pp-self').forEach(function(x){ x.hidden=!isSelf; });
     document.querySelectorAll('.pp-ref').forEach(function(x){ x.hidden=isSelf; });
     var sbb=document.getElementById('pp-sbb'), sbt=document.getElementById('pp-sbt');
-    if(sbb && isSelf){ sbb.href='https://docs.google.com/forms/d/e/1FAIpQLSe6nFwoqQarZOfhfHRb49kuWzvI9Rt6cuwFDgkrqPi-LY_wBA/viewform?usp=header'; sbb.target='_blank'; sbb.textContent='開始收信'; if(sbt) sbt.textContent='學術筆友計畫｜單季 NT$695 起'; }
-    else if(sbb){ sbb.textContent='收藏 32 封信'; if(sbt) sbt.textContent='學術筆友計畫｜32 封信 NT$1,395'; }
+    if(sbb && isSelf){ sbb.href='https://docs.google.com/forms/d/e/1FAIpQLSe6nFwoqQarZOfhfHRb49kuWzvI9Rt6cuwFDgkrqPi-LY_wBA/viewform?usp=header'; sbb.target='_blank'; sbb.textContent='開始收信'; if(sbt) sbt.textContent='第一季影音版・限時預購到 11/30'; }
+    else if(sbb){ sbb.textContent='收藏 32 封信'; if(sbt) sbt.textContent='學術筆友計畫｜32 封信 NT$1,450'; }
     var lsb=document.getElementById('lt-sbb'), lst=document.getElementById('lt-sbt');
-    if(lsb){ if(isSelf){ lsb.href='https://docs.google.com/forms/d/e/1FAIpQLSe6nFwoqQarZOfhfHRb49kuWzvI9Rt6cuwFDgkrqPi-LY_wBA/viewform?usp=header'; lsb.textContent='開始收信'; if(lst) lst.textContent='學術筆友計畫｜單季 NT$695 起'; } else { lsb.href=(mine.bundle||self.bundle); lsb.textContent='收藏 32 封信'; if(lst) lst.textContent='學術筆友計畫｜32 封信 NT$1,395'; } }
+    if(lsb){ if(isSelf){ lsb.href='https://docs.google.com/forms/d/e/1FAIpQLSe6nFwoqQarZOfhfHRb49kuWzvI9Rt6cuwFDgkrqPi-LY_wBA/viewform?usp=header'; lsb.textContent='開始收信'; if(lst) lst.textContent='學術筆友計畫｜單季 NT$717 起'; } else { lsb.href=(mine.bundle||self.bundle); lsb.textContent='收藏 32 封信'; if(lst) lst.textContent='學術筆友計畫｜32 封信 NT$1,450'; } }
     document.querySelectorAll('.js-self-only').forEach(function(x){ x.hidden = !(isSelf && REMIT); });
     document.querySelectorAll('.js-remit').forEach(function(a){ a.href=REMIT||'#'; });
     document.querySelectorAll('.js-wsform').forEach(function(a){ a.href=WS.form; });
@@ -2226,6 +2271,7 @@ document.querySelectorAll(".ss-tab").forEach(function(b){b.addEventListener("cli
     <div class="sheet-body">
       <p class="tl-tag">🎬 第一季影音版・預購中</p>
       <ul class="pm-ul"><li>第一季 15 封信，每封都有一支 5–7 分鐘影片，共 75 分鐘以上</li><li>不是把信念一遍，是重新講解每封信的核心概念</li><li>文字信照常寄出，影片另外看</li></ul>
+      <div class="pp-video pv-modal"><p class="pv-t">限時預購到 11/30（一）23:59</p><p class="pv-p">第一季文字＋影音 <b>NT$1,211</b><span class="pv-sep">｜</span>兩季文字＋第一季影音 <b>NT$1,911</b></p><p class="pv-n">影片 2027/1/11 開始寄，3/17 前完成 15 支，可觀看到 2028/6/30。如果影片沒有如期開始或完成，影音部分退還 500 元。</p></div>
     </div>
     <p style="text-align:center;margin:18px 0 6px"><button type="button" class="lt-x2 js-modal-close">✕ 關閉，回到筆友計畫</button></p>
   </div>
