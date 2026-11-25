@@ -833,6 +833,18 @@ footer{padding-top:20px}
 .pp-vplans .nw{white-space:nowrap}
 .pp-vplans .pv-hl{color:#3D6491;font-size:1.25em;font-weight:800}
 .pp-vplans .pv-hl2{color:#3D6491;font-weight:800}
+
+/* 筆友計畫頁開頭：影音版限時預購橫條 */
+.pv-strip{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#F4F8FC;border:2px solid #4F78A8;border-radius:16px;padding:16px 20px;margin:12px 0 14px;box-shadow:0 8px 20px rgba(79,120,168,.15)}
+.pv-strip p{margin:0}
+.pv-strip .pvs-k{font-size:19px;font-weight:800;color:#3D6491}
+.pv-strip .pvs-t{margin-top:4px;font-size:15.5px;font-weight:700;color:var(--ink)}
+.pv-strip .pvs-t b{color:#3D6491;font-size:1.2em}
+.pv-strip .pvs-d{margin-top:4px;font-size:13.5px;font-weight:700;color:#3D6491}
+.pv-strip .pvs-r{display:flex;flex-direction:column;align-items:center;gap:10px}
+.pv-strip .pv-cd b{background:#4F78A8}
+.pv-strip .pvs-btn{background:#4F78A8;color:#fff;border-radius:999px;padding:10px 24px;font-weight:700;text-decoration:none;white-space:nowrap}
+@media (max-width:640px){.pv-strip{flex-direction:column;align-items:stretch}.pv-strip .pvs-r{align-items:stretch}.pv-strip .pv-cd{justify-content:center}.pv-strip .pvs-btn{text-align:center}}
 /* 筆友計畫：影音版預購區塊 */
 .pp-video{margin:14px 0 4px;padding:16px 20px;background:var(--card);border:1.5px dashed var(--line);border-radius:16px;text-align:center}
 .pp-video p{margin:0}
@@ -1151,6 +1163,17 @@ body:has(#room-home:not([hidden])){background:var(--card)}
       </div>
       <div class="pp-offer">
         <p class="pp-offer-t">💌 <b>學術筆友計畫</b>：兩季共 32 封信，一封一封寄到你的信箱。每封信附學習單，讀完可以直接回信問小妍。</p>
+        <div class="pv-strip">
+          <div class="pvs-l">
+            <p class="pvs-k">🎬 第一季影音版・限時預購</p>
+            <p class="pvs-t">15 支講解影片・<b>共 75 分鐘以上</b></p>
+            <p class="pvs-d">預購到 11/30（一）23:59</p>
+          </div>
+          <div class="pvs-r">
+            <div class="cd-n pv-cd js-cd-box"><span><b class="js-cd-d">0</b>天</span><span><b class="js-cd-h">00</b>時</span><span><b class="js-cd-m">00</b>分</span></div>
+            <a class="pvs-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe6nFwoqQarZOfhfHRb49kuWzvI9Rt6cuwFDgkrqPi-LY_wBA/viewform?usp=header" target="_blank" rel="noopener">預購影音版 →</a>
+          </div>
+        </div>
         <a class="host" href="#about"><img src="img/photo.webp" alt="" width="640" height="640"><span><b>寫信的人：Dr. 小妍</b>寫作與思考的陪伴者<br>🎓 NTU｜生醫 × 教育｜SSCI &amp; SCIE 發表</span></a>
       </div>
     </div>
@@ -2171,7 +2194,8 @@ var EVENTS = [
 (function(){
   var stages=[
     {end:Date.parse('2026-11-21T00:00:00+08:00'), label:'💌 第一封信 11/21（六）就要寄出了', short:'第一封信寄出倒數'},
-    {end:Date.parse('2026-11-24T00:00:00+08:00'), label:'💌 報名倒數｜11/23（一）23:59 截止', short:'報名截止倒數'}
+    {end:Date.parse('2026-11-24T00:00:00+08:00'), label:'💌 報名倒數｜11/23（一）23:59 截止', short:'報名截止倒數'},
+    {end:Date.parse('2026-12-01T00:00:00+08:00'), label:'🎬 影音版限時預購｜11/30（一）23:59 截止', short:'影音版預購倒數'}
   ];
   function pad(n){return (n<10?'0':'')+n;}
   function tick(){
