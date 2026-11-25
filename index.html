@@ -11,7 +11,7 @@
 <meta property="og:title" content="Dr. 小妍の線上書苑">
 <meta property="og:url" content="https://yan.pinkjaja.com/">
 <meta property="og:image" content="https://yan.pinkjaja.com/img/og-avatar.jpg">
-<title>論文寫作、文獻探討與 AI 輔助研究｜Dr. 小妍の線上書苑</title>
+<title>Dr. 小妍の線上書苑｜論文寫作、文獻探討與 AI 輔助研究</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Chiron+GoRound+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -2065,7 +2065,7 @@ var REMIT = "https://docs.google.com/forms/d/e/1FAIpQLSderj6vESCafGO5p6hPQYG9YdX
       document.querySelectorAll('[data-not]').forEach(function(x){ x.hidden = x.getAttribute('data-not')===name; });
       var ft=document.getElementById('more'); if(ft) ft.hidden=(name==='letter'||name==='home');
       var sbar=document.getElementById('stickybar'); if(sbar) sbar.style.display=(name==='home'||name==='about'||name==='free')?'none':'';
-      document.title = name==='penpal' ? '學術筆友計畫｜Dr. 小妍の線上書苑' : name==='ws' ? '線上研究工作坊｜Dr. 小妍の線上書苑' : name==='prep' ? 'AI × 學術小聚｜Dr. 小妍の線上書苑' : name==='letter' ? '免費試讀一封信｜學術筆友計畫' : name==='about' ? '關於 Dr. 小妍｜Dr. 小妍の線上書苑' : name==='free' ? '免費資源｜Dr. 小妍の線上書苑' : '論文寫作、文獻探討與 AI 輔助研究｜Dr. 小妍の線上書苑';
+      document.title = name==='penpal' ? '學術筆友計畫｜Dr. 小妍の線上書苑' : name==='ws' ? '線上研究工作坊｜Dr. 小妍の線上書苑' : name==='prep' ? 'AI × 學術小聚｜Dr. 小妍の線上書苑' : name==='letter' ? '免費試讀一封信｜學術筆友計畫' : name==='about' ? '關於 Dr. 小妍｜Dr. 小妍の線上書苑' : name==='free' ? '免費資源｜Dr. 小妍の線上書苑' : 'Dr. 小妍の線上書苑｜論文寫作、文獻探討與 AI 輔助研究';
       current=name;
     }
     if(scrollTo){ var id=(location.hash||'').replace(/^#/,''); if(id.indexOf('penpal-')===0) id='penpal'; if(id==='meetup'||id.indexOf('meetup-')===0) id='prep'; if(id==='recap') id='room-meetup'; if(id.indexOf('letter-')===0) id='letter'; var t=id && document.getElementById(id); if(t){ t.scrollIntoView(); setTimeout(function(){ if(window.scrollY<10||Math.abs(t.getBoundingClientRect().top-16)>4) t.scrollIntoView(); },700); window.addEventListener("load",function(){ t.scrollIntoView(); },{once:true}); } }
