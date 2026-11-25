@@ -810,20 +810,15 @@ footer{padding-top:20px}
 .pp-vplans .pv-tag{font-size:13.5px}
 .pp-vplans .pv-note{grid-column:1/-1;margin:2px 4px 0;font-size:13px;line-height:1.7;color:var(--ink-soft);text-align:center}
 .pp-vplans .pv-textlabel{grid-column:1/-1;margin:14px 0 -2px;font-size:14px;font-weight:700;color:var(--ink-soft);text-align:center}
-.pp-vplans .plan.pt-small{padding:14px 16px;box-shadow:none}
-.pp-vplans .plan.pt-small h3{font-size:15.5px}
-.pp-vplans .plan.pt-small .price{font-size:24px;margin:4px 0 0}
-.pp-vplans .plan.pt-small .h3-price{font-size:16px}
 @media (max-width:760px){
-.pp-plans3.pp-vplans{grid-template-columns:minmax(0,1fr)}
+.pp-plans3.pp-vplans{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 .pp-vplans .plan.pv-second{grid-template-columns:1fr;padding:18px 20px}
-.pp-vplans .plan.pt-small{padding:12px 16px}
-.pp-vplans .plan.pt-small .h3-price{display:inline;margin-left:8px}
 }
 .pp-vplans .plan{min-width:0}
 .pp-vplans .pf-l,.pp-vplans .pf-r{min-width:0}
 .pp-vplans .pv-sub{margin:2px 0 0;font-size:14px;font-weight:700;color:var(--ink-soft)}
 .pp-vplans .plan.pt-small{display:flex;flex-direction:column}
+@media (max-width:760px){#room-penpal .pp-vplans .plan.pt-small h3{font-size:15px}}
 /* 1,911 主推卡：藍色 */
 .pp-vplans .plan.feature.pv-blue{border-color:#4F78A8;background:#F4F8FC;box-shadow:0 10px 26px rgba(79,120,168,.18)}
 .pp-vplans .pv-blue .pv-tag{color:#3D6491;background:#E1EBF6}
@@ -1318,14 +1313,14 @@ body:has(#room-home:not([hidden])){background:var(--card)}
       
       <div class="plan pt-small">
         <span class="plan-date">12/14（一）開始</span>
-        <h3>🌸 第一季｜15 封信</h3>
-        <p class="price"><small>NT$</small>717</p>
+        <h3>🌸 第一季｜15 封信<span class="h3-price">NT$717</span></h3>
+        <ul><li>論文焦慮、和 AI 協作、與指導教授溝通、準備口試</li></ul>
         <a class="btn wide ghost js-pay pp-ref" hidden data-plan="s1" href="#pp-plans" target="_blank" rel="noopener">只收第一季 →</a>
       </div>
       <div class="plan pt-small">
         <span class="plan-date">12/12（六）開始</span>
-        <h3>🌿 第二季｜17 封信</h3>
-        <p class="price"><small>NT$</small>777</p>
+        <h3>🌿 第二季｜17 封信<span class="h3-price">NT$777</span></h3>
+        <ul><li>研究問題、文獻對話、研究方法、論證寫作與修稿</li></ul>
         <a class="btn wide ghost js-pay pp-ref" hidden data-plan="s2" href="#pp-plans" target="_blank" rel="noopener">只收第二季 →</a>
       </div>
       </div>
