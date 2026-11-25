@@ -800,6 +800,12 @@ footer{padding-top:20px}
 .ab-cv h3{font-family:var(--body);font-size:17px;color:var(--rose);margin-bottom:8px}
 .ab-cv ul{padding-left:20px}.ab-cv li{font-size:15.5px;margin-bottom:5px;line-height:1.7}
 .ab-go{text-align:center;margin-top:18px}
+/* 首頁：套用筆友計畫頁配色 */
+#room-home .hm-hero{background:linear-gradient(180deg,var(--blush) 0%,var(--paper) 100%);padding:34px 0 30px;border-bottom:1px solid var(--line)}
+#room-home .hm-welcome{background:none;border:0;padding:0}
+#room-home #events,#room-home .hm-contact{background:var(--card)}
+#room-home #events{padding-top:36px;padding-bottom:20px}
+body:has(#room-home:not([hidden])){background:var(--card)}
 #hm-list .hm-row{border-color:#CFDFC8}
 #hm-list .hm-row:hover{border-color:#6F8E6B}
 #hm-list .hm-date{background:#E5EDE1}
