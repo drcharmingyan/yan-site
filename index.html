@@ -2195,7 +2195,7 @@ var EVENTS = [
   var stages=[
     {end:Date.parse('2026-11-21T00:00:00+08:00'), label:'💌 第一封信 11/21（六）就要寄出了', short:'第一封信寄出倒數'},
     {end:Date.parse('2026-11-24T00:00:00+08:00'), label:'💌 報名倒數｜11/23（一）23:59 截止', short:'報名截止倒數'},
-    {end:Date.parse('2026-12-01T00:00:00+08:00'), label:'🎬 影音版限時預購｜11/30（一）23:59 截止', short:'影音版預購倒數'}
+    {end:Date.parse('2026-12-01T00:00:00+08:00'), label:'🎬 影音版限時預購｜11/30（一）23:59 截止', short:'倒數', tail:'｜文字版 NT$717 起'}
   ];
   function pad(n){return (n<10?'0':'')+n;}
   function tick(){
@@ -2209,7 +2209,7 @@ var EVENTS = [
     document.querySelectorAll('.js-cd-h').forEach(function(x){x.textContent=pad(h);});
     document.querySelectorAll('.js-cd-m').forEach(function(x){x.textContent=pad(m);});
     document.querySelectorAll('.js-cd-s').forEach(function(x){x.textContent=pad(s);});
-    var sh=st.short+' '+(d>0?d+' 天 ':'')+pad(h)+':'+pad(m)+':'+pad(s);
+    var sh=st.short+' '+(d>0?d+' 天 ':'')+pad(h)+':'+pad(m)+':'+pad(s)+(st.tail||'');
     document.querySelectorAll('.js-cd-short').forEach(function(x){x.textContent=sh;});
   }
   tick(); setInterval(tick,1000);
