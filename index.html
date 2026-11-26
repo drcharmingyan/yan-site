@@ -417,6 +417,19 @@ footer .links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .hm-nav span small{font-size:11px;margin-left:4px}
 .hm-list.hm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .hm-grid .hm-row:last-child:nth-child(odd){grid-column:1/-1}
+/* 活動數量是單數時，研究診斷班橫跨整排，其他兩兩並排 */
+.hm-grid .hm-row.hm-wide{grid-column:1/-1}
+/* 研究診斷班：橘色，比較顯眼 */
+#hm-list .hm-row.hm-widec{border-color:#F0B98A;background:#FFF7F0}
+#hm-list .hm-row.hm-widec:hover{border-color:#D9874A}
+#hm-list .hm-row.hm-widec .hm-date{background:#FBDCC2}
+#hm-list .hm-row.hm-widec .hm-date b,#hm-list .hm-row.hm-widec .hm-date small{color:#A4521B}
+#hm-list.hm-grid .hm-row.hm-widec .hm-go{color:#C0652A}
+/* 電腦版：日期框加寬，星期和時間排同一行 */
+@media (min-width:471px){#hm-list.hm-grid .hm-date{flex-basis:110px}#hm-list.hm-grid .hm-date small{white-space:nowrap;font-size:12px}#hm-list.hm-grid .hm-row.hm-wide .hm-date{flex-basis:170px}#hm-list.hm-grid .hm-date small br{display:none}#hm-list.hm-grid .hm-row{gap:12px;padding-left:12px;padding-right:12px}}
+/* 電腦版：研究診斷班的日期框加寬，日期和時間各一行 */
+@media (min-width:471px){.hm-grid .hm-row.hm-wide .hm-date{flex-basis:170px;padding:8px 10px}.hm-grid .hm-row.hm-wide .hm-date b,.hm-grid .hm-row.hm-wide .hm-date small{white-space:nowrap}}
+.hm-grid.has-wide .hm-row:last-child:nth-child(odd):not(.hm-wide){grid-column:auto}
 @media (max-width:470px){.hm-list.hm-grid{grid-template-columns:1fr}}
 .hm-grid .hm-date{flex-basis:92px}
 .hm-grid .hm-date small{display:block;line-height:1.35}
@@ -2146,17 +2159,21 @@ var REMIT = "https://docs.google.com/forms/d/e/1FAIpQLSderj6vESCafGO5p6hPQYG9YdX
    home：true = 出現在首頁近期活動；活動結束（end 之後）會自動從首頁消失 */
 var EVENTS = [
   { id:"ws-1128", date:"11/28", wd:"（六）", time:"19:00–22:00", name:"文獻整合實戰班", sub:"把讀過的文獻，整理成有觀點的文獻探討",
-    price:"NT$1,111", seats:"限額 15 人", fit:"文獻很多卻整合不起來、想用 AI 又怕寫錯的你", status:"剩 1 個名額", end:"2026-11-28T22:00:00+08:00", form:"ws", home:true },
+    price:"NT$1,111", seats:"限額 15 人", fit:"文獻很多卻整合不起來、想用 AI 又怕寫錯的你", status:"剩 1 個名額", end:"2026-11-28T22:00:00+08:00", form:"ws", home:false },
   { id:"prep-teach", date:"12/5", wd:"（六）", time:"14:00–16:00", name:"AI 輔助備課", sub:"從教學設計到教學簡報，運用 ChatGPT、Claude 與 NotebookLM",
-    price:"NT$555", seats:"線上・Google Meet", fit:"教師、講師、助教、臨床教學或醫學教育工作者，以及要帶讀書會的研究生", status:"", end:"2026-12-05T16:00:00+08:00", form:"https://docs.google.com/forms/d/e/1FAIpQLSdG5bUYyRbYsXHMlhet7bDQBU0jxa-eHgslS5s404HT6XAAbA/viewform", home:true },
+    price:"NT$555", seats:"線上・Google Meet", fit:"教師、講師、助教、臨床教學或醫學教育工作者，以及要帶讀書會的研究生", status:"剩 7 個名額", end:"2026-12-05T16:00:00+08:00", form:"https://docs.google.com/forms/d/e/1FAIpQLSdG5bUYyRbYsXHMlhet7bDQBU0jxa-eHgslS5s404HT6XAAbA/viewform", home:true },
   { id:"ws-1212", date:"12/12", wd:"（六）", time:"19:00–22:00", name:"研討會／期刊投稿實戰班", sub:"從挑選研討會、期刊到投稿，一步一步走過",
     price:"NT$1,111", seats:"限額 15 人", fit:"研究做完了，想整理成研討會或期刊文章的你", status:"", end:"2026-12-12T22:00:00+08:00", form:"ws", home:true },
-  { id:"ws-dx", date:"12/13・12/20", wd:"（日）", time:"19:00–22:00，選一場", name:"研究診斷班", sub:"",
-    price:"NT$1,717", seats:"5–7 人小班", fit:"知道自己卡住，卻說不清楚卡在哪裡的你", status:"", end:"2026-12-20T22:00:00+08:00", form:"ws", home:false },
+  { id:"ws-dx", date:"12/13・12/20", wd:"（日）", time:"19:00–22:00，選一場", name:"研究診斷班", sub:"5–7 人小班制，依照每位學員的研究困境提供個人研究診斷手冊，一起釐清研究卡關的原因與下一步方向。",
+    price:"NT$1,717", seats:"5–7 人小班", fit:"知道自己卡住，卻說不清楚卡在哪裡的你", status:"", end:"2026-12-20T22:00:00+08:00", form:"ws", home:true, wide:true },
   { id:"ws-1219", date:"12/19", wd:"（六）", time:"19:00–22:00", name:"質性研究實戰班", sub:"訪談資料怎麼整理、分析，寫成研究發現",
     price:"NT$1,111", seats:"限額 15 人", fit:"正在規劃或進行質性研究的你", status:"", end:"2026-12-19T22:00:00+08:00", form:"ws", home:true },
   { id:"prep-slides", date:"12/26", wd:"（六）", time:"20:00–22:00", name:"AI 輔助簡報與口試準備", sub:"一百多頁的論文，濃縮成委員聽得懂的 20 分鐘",
-    price:"NT$555", seats:"線上・Google Meet", fit:"即將學位口試、計畫書口試的碩博士生，以及要在研討會做口頭發表的人", status:"", end:"2026-12-26T22:00:00+08:00", form:"https://docs.google.com/forms/d/e/1FAIpQLSdYtMGNNLTQpnxt1QPjGO2IHiFaXDQmLL8OQbSTzPs_5Xy_4w/viewform", home:true }
+    price:"NT$555", seats:"線上・Google Meet", fit:"即將學位口試、計畫書口試的碩博士生，以及要在研討會做口頭發表的人", status:"", end:"2026-12-26T22:00:00+08:00", form:"https://docs.google.com/forms/d/e/1FAIpQLSdYtMGNNLTQpnxt1QPjGO2IHiFaXDQmLL8OQbSTzPs_5Xy_4w/viewform", home:true },
+  { id:"ws-0109", date:"1/9", wd:"（六）", time:"19:00–22:00", name:"文獻整合實戰班", sub:"把讀過的文獻，整理成有觀點的文獻探討",
+    price:"NT$1,111", seats:"限額 15 人", fit:"文獻很多卻整合不起來、想用 AI 又怕寫錯的你", status:"", end:"2027-01-09T22:00:00+08:00", form:"ws", home:true },
+  { id:"prep-imrad", date:"1/15", wd:"（五）", time:"20:00–22:00", name:"AI 輔助研究", sub:"從 IMRaD 掌握論文的整體架構",
+    price:"NT$555", seats:"限額 15 人", fit:"想掌握論文整體架構的碩博士生", status:"", end:"2027-01-15T22:00:00+08:00", form:"https://docs.google.com/forms/d/e/1FAIpQLSdYtMGNNLTQpnxt1QPjGO2IHiFaXDQmLL8OQbSTzPs_5Xy_4w/viewform", home:true }
 ];
 </script>
 <script>
@@ -2169,9 +2186,9 @@ var EVENTS = [
   EVENTS.forEach(function(e){
     if(!e.home || now>Date.parse(e.end)) return;
     var go = e.status==='額滿' ? 'https://lin.ee/SFtObDd' : formUrl(e);
-    html+='<a class="hm-row" href="'+go+'" target="_blank" rel="noopener"><span class="hm-date"><b>'+e.date+'</b><small>'+e.wd+'<br>'+e.time+'</small></span><span class="hm-name"><b>'+e.name+tag(e)+'</b><small>'+e.sub+'</small></span><span class="hm-go">'+(e.status==='額滿'?'想等加場 →':'前往報名 →')+'</span></a>';
+    html+='<a class="hm-row'+(e.wide?' hm-widec':'')+'" href="'+go+'" target="_blank" rel="noopener"><span class="hm-date"><b>'+e.date.replace(/(\d{1,2})\/(\d{1,2})/g,function(m,x,y){return (x.length<2?'0'+x:x)+'/'+(y.length<2?'0'+y:y);})+'</b><small>'+e.wd+'<br>'+e.time+'</small></span><span class="hm-name"><b>'+e.name+tag(e)+'</b><small>'+e.sub+'</small></span><span class="hm-go">'+(e.status==='額滿'?'想等加場 →':'前往報名 →')+'</span></a>';
   });
-  if(l){ l.innerHTML=html; if(!html){ l.hidden=true; var hh=l.previousElementSibling; if(hh) hh.hidden=true; } }
+  if(l){ l.innerHTML=html; var rows=l.querySelectorAll('.hm-row'); if(rows.length%2===1){ var wc=l.querySelector('.hm-widec'); if(wc){ wc.classList.add('hm-wide'); l.classList.add('has-wide'); } } if(!html){ l.hidden=true; var hh=l.previousElementSibling; if(hh) hh.hidden=true; } }
   /* 各場次資訊列與標籤 */
   EVENTS.forEach(function(e){
     document.querySelectorAll('.ws-key[data-ev="'+e.id+'"]').forEach(function(k){
