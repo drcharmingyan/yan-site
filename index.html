@@ -891,7 +891,7 @@ body:has(#room-home:not([hidden])){background:var(--card)}
 
 <main id="top">
   <!-- HOME（草稿：網址加 #home 才會看到） -->
-  <div class="room" id="room-home" hidden>
+  <div class="room" id="room-home">
     <section class="hm-hero" id="home">
       <div class="wrap"><div class="hm-welcome">
         <img src="img/photo.webp" alt="Dr. 小妍" width="640" height="640" style="object-position:50% 50%">
@@ -925,7 +925,7 @@ body:has(#room-home:not([hidden])){background:var(--card)}
     </section>
   </div>
 
-  <div class="room" id="room-meetup">
+  <div class="room" id="room-meetup" hidden>
   <!-- HERO -->
   <section class="hero" id="meetup">
     <div class="wrap">
@@ -2057,7 +2057,7 @@ body:has(#room-home:not([hidden])){background:var(--card)}
 </script>
 <div class="stickybar on" id="stickybar">
   <div class="sb-in">
-    <div class="sb-t" data-for="meetup"><b>AI × 學術小聚<em class="sb-tag">回顧</em></b><span>10–11 月・7 場已圓滿結束</span></div>
+    <div class="sb-t" data-for="meetup" hidden><b>AI × 學術小聚<em class="sb-tag">回顧</em></b><span>10–11 月・7 場已圓滿結束</span></div>
     <a class="sb-btn" data-for="meetup" href="#events">看近期活動</a>
     <div class="sb-t" data-for="penpal" hidden><b id="pp-sbt">學術筆友計畫｜32 封信 NT$1,450</b><span class="js-cd-short">第一封信寄出倒數</span></div>
     <a class="sb-btn js-pay" id="pp-sbb" data-for="penpal" data-plan="bundle" href="#pp-plans" target="_blank" rel="noopener" hidden>收藏 32 封信</a>
