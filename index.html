@@ -418,7 +418,13 @@ footer .links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .hm-list.hm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .hm-grid .hm-row:last-child:nth-child(odd){grid-column:1/-1}
 /* 活動數量是單數時，研究診斷班橫跨整排，其他兩兩並排 */
-.hm-grid .hm-row.hm-wide{grid-column:1/-1}
+.hm-grid .hm-row.hm-wide,.hm-grid .hm-row.hm-lastspan{grid-column:1/-1}
+/* 自媒體經營實戰班（最後一張橫跨）：霧藍，跟紫色的筆友計畫區隔 */
+#hm-list .hm-row.hm-lastspan{border-color:#B7C9DE;background:#F5F8FC}
+#hm-list .hm-row.hm-lastspan:hover{border-color:#6F8FB5}
+#hm-list .hm-row.hm-lastspan .hm-date{background:#DCE6F2}
+#hm-list .hm-row.hm-lastspan .hm-date b,#hm-list .hm-row.hm-lastspan .hm-date small{color:#3D5E85}
+#hm-list.hm-grid .hm-row.hm-lastspan .hm-go{color:#4F78A8}
 /* 研究診斷班：橘色，比較顯眼 */
 #hm-list .hm-row.hm-widec{border-color:#F0B98A;background:#FFF7F0}
 #hm-list .hm-row.hm-widec:hover{border-color:#D9874A}
@@ -429,7 +435,7 @@ footer .links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (min-width:471px){#hm-list.hm-grid .hm-date{flex-basis:110px}#hm-list.hm-grid .hm-date small{white-space:nowrap;font-size:12px}#hm-list.hm-grid .hm-row.hm-wide .hm-date{flex-basis:170px}#hm-list.hm-grid .hm-date small br{display:none}#hm-list.hm-grid .hm-row{gap:12px;padding-left:12px;padding-right:12px}}
 /* 電腦版：研究診斷班的日期框加寬，日期和時間各一行 */
 @media (min-width:471px){.hm-grid .hm-row.hm-wide .hm-date{flex-basis:170px;padding:8px 10px}.hm-grid .hm-row.hm-wide .hm-date b,.hm-grid .hm-row.hm-wide .hm-date small{white-space:nowrap}}
-.hm-grid.has-wide .hm-row:last-child:nth-child(odd):not(.hm-wide){grid-column:auto}
+.hm-grid.has-wide .hm-row:last-child:nth-child(odd):not(.hm-wide):not(.hm-lastspan){grid-column:auto}
 @media (max-width:470px){.hm-list.hm-grid{grid-template-columns:1fr}}
 .hm-grid .hm-date{flex-basis:92px}
 .hm-grid .hm-date small{display:block;line-height:1.35}
@@ -2161,7 +2167,7 @@ var EVENTS = [
   { id:"ws-1128", date:"11/28", wd:"（六）", time:"19:00–22:00", name:"文獻整合實戰班", sub:"把讀過的文獻，整理成有觀點的文獻探討",
     price:"NT$1,111", seats:"限額 15 人", fit:"文獻很多卻整合不起來、想用 AI 又怕寫錯的你", status:"剩 1 個名額", end:"2026-11-28T22:00:00+08:00", form:"ws", home:false },
   { id:"prep-teach", date:"12/5", wd:"（六）", time:"14:00–16:00", name:"AI 輔助備課", sub:"從教學設計到教學簡報，運用 ChatGPT、Claude 與 NotebookLM",
-    price:"NT$555", seats:"線上・Google Meet", fit:"教師、講師、助教、臨床教學或醫學教育工作者，以及要帶讀書會的研究生", status:"剩 7 個名額", end:"2026-12-05T16:00:00+08:00", form:"https://docs.google.com/forms/d/e/1FAIpQLSdG5bUYyRbYsXHMlhet7bDQBU0jxa-eHgslS5s404HT6XAAbA/viewform", home:true },
+    price:"NT$555", seats:"線上・Google Meet", fit:"教師、講師、助教、臨床教學或醫學教育工作者，以及要帶讀書會的研究生", status:"剩 5 個名額", end:"2026-12-05T16:00:00+08:00", form:"https://docs.google.com/forms/d/e/1FAIpQLSdG5bUYyRbYsXHMlhet7bDQBU0jxa-eHgslS5s404HT6XAAbA/viewform", home:true },
   { id:"ws-1212", date:"12/12", wd:"（六）", time:"19:00–22:00", name:"研討會／期刊投稿實戰班", sub:"從挑選研討會、期刊到投稿，一步一步走過",
     price:"NT$1,111", seats:"限額 15 人", fit:"研究做完了，想整理成研討會或期刊文章的你", status:"", end:"2026-12-12T22:00:00+08:00", form:"ws", home:true },
   { id:"ws-dx", date:"12/13・12/20", wd:"（日）", time:"19:00–22:00，選一場", name:"研究診斷班", sub:"5–7 人小班制，依照每位學員的研究困境提供個人研究診斷手冊，一起釐清研究卡關的原因與下一步方向。",
@@ -2173,7 +2179,9 @@ var EVENTS = [
   { id:"ws-0109", date:"1/9", wd:"（六）", time:"19:00–22:00", name:"文獻整合實戰班", sub:"把讀過的文獻，整理成有觀點的文獻探討",
     price:"NT$1,111", seats:"限額 15 人", fit:"文獻很多卻整合不起來、想用 AI 又怕寫錯的你", status:"", end:"2027-01-09T22:00:00+08:00", form:"ws", home:true },
   { id:"prep-imrad", date:"1/15", wd:"（五）", time:"20:00–22:00", name:"AI 輔助研究", sub:"從 IMRaD 掌握論文的整體架構",
-    price:"NT$555", seats:"限額 15 人", fit:"想掌握論文整體架構的碩博士生", status:"", end:"2027-01-15T22:00:00+08:00", form:"https://docs.google.com/forms/d/e/1FAIpQLSdYtMGNNLTQpnxt1QPjGO2IHiFaXDQmLL8OQbSTzPs_5Xy_4w/viewform", home:true }
+    price:"NT$555", seats:"限額 15 人", fit:"想掌握論文整體架構的碩博士生", status:"", end:"2027-01-15T22:00:00+08:00", form:"https://docs.google.com/forms/d/e/1FAIpQLSdYtMGNNLTQpnxt1QPjGO2IHiFaXDQmLL8OQbSTzPs_5Xy_4w/viewform", home:true },
+  { id:"ws-0130", date:"1/30", wd:"（六）", time:"19:00–22:00", name:"知識型自媒體經營實戰班", sub:"從個人品牌、AI 內容創作到知識變現，將你的專業轉化為一門生意",
+    price:"", seats:"", fit:"想經營個人品牌或知識型副業的研究生、教育工作者與創作者", status:"", end:"2027-01-30T22:00:00+08:00", form:"https://portaly.cc/ciyatsu/product/sTq70Q1eeZOA5O86fEsW", home:true }
 ];
 </script>
 <script>
@@ -2188,7 +2196,7 @@ var EVENTS = [
     var go = e.status==='額滿' ? 'https://lin.ee/SFtObDd' : formUrl(e);
     html+='<a class="hm-row'+(e.wide?' hm-widec':'')+'" href="'+go+'" target="_blank" rel="noopener"><span class="hm-date"><b>'+e.date.replace(/(\d{1,2})\/(\d{1,2})/g,function(m,x,y){return (x.length<2?'0'+x:x)+'/'+(y.length<2?'0'+y:y);})+'</b><small>'+e.wd+'<br>'+e.time+'</small></span><span class="hm-name"><b>'+e.name+tag(e)+'</b><small>'+e.sub+'</small></span><span class="hm-go">'+(e.status==='額滿'?'想等加場 →':'前往報名 →')+'</span></a>';
   });
-  if(l){ l.innerHTML=html; var rows=l.querySelectorAll('.hm-row'); if(rows.length%2===1){ var wc=l.querySelector('.hm-widec'); if(wc){ wc.classList.add('hm-wide'); l.classList.add('has-wide'); } } if(!html){ l.hidden=true; var hh=l.previousElementSibling; if(hh) hh.hidden=true; } }
+  if(l){ l.innerHTML=html; var wc=l.querySelector('.hm-widec'); if(wc){ wc.classList.add('hm-wide'); l.classList.add('has-wide'); var rest=[].filter.call(l.querySelectorAll('.hm-row'),function(r){return r!==wc;}); if(rest.length%2===1){ rest[rest.length-1].classList.add('hm-lastspan'); } } if(!html){ l.hidden=true; var hh=l.previousElementSibling; if(hh) hh.hidden=true; } }
   /* 各場次資訊列與標籤 */
   EVENTS.forEach(function(e){
     document.querySelectorAll('.ws-key[data-ev="'+e.id+'"]').forEach(function(k){
