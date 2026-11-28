@@ -860,6 +860,86 @@ footer{padding-top:20px}
 .pv-strip .pv-cd b{background:#4F78A8}
 .pv-strip .pvs-btn{background:#4F78A8;color:#fff;border-radius:999px;padding:10px 24px;font-weight:700;text-decoration:none;white-space:nowrap}
 @media (max-width:640px){.pv-strip{flex-direction:column;align-items:stretch}.pv-strip .pvs-r{align-items:stretch}.pv-strip .pv-cd{justify-content:center}.pv-strip .pvs-btn{text-align:center}}
+
+/* 影音版：🎬 放大、輕輕彈跳；首頁超早鳥倒數 */
+.pv-bounce{display:inline-block;font-size:1.55em;line-height:1;vertical-align:-0.12em;transform-origin:50% 100%;animation:pvBounce 2.4s ease-in-out infinite}
+@keyframes pvBounce{0%,55%,100%{transform:translateY(0) scale(1)}65%{transform:translateY(-7px) scale(1.08)}75%{transform:translateY(0) scale(.97)}85%{transform:translateY(-3px) scale(1.03)}92%{transform:translateY(0) scale(1)}}
+@media (prefers-reduced-motion:reduce){.pv-bounce{animation:none}}
+.pv-strip .pvs-m{flex:1;display:flex;align-items:center;justify-content:center}
+.pv-strip .pvs-m img{width:150px;height:auto;margin:-8px 0}
+@media (min-width:641px){.pv-strip .pvs-k .pv-bounce{display:none}}
+@media (max-width:640px){.pv-strip .pvs-m{order:-1}.pv-strip .pvs-m img{width:130px;margin:-6px 0 -10px}.pv-strip .pvs-k .pv-bounce{display:none}}
+/* 首頁筆友計畫：左邊寫信插圖、中間文字、右邊場記板動畫＋倒數 */
+.hm-pp.hm-pp3 img.hm-pp-letter{flex:0 0 30%;width:30%}
+.hm-pp3 .hm-pp-r{flex:0 0 24%;display:flex;flex-direction:column;align-items:center;gap:8px}
+.hm-pp3 .hm-pp-r img.hm-pp-clap{width:100%;max-width:220px;flex:none;border-radius:0}
+.hm-pp3 .pv-cd{gap:6px}
+.hm-pp3 .pv-cd span{font-size:13px;color:#4A5D78}
+.hm-pp3 .pv-cd i{font-style:normal;display:inline-block;min-width:36px;text-align:center;background:#4F78A8;color:#fff;font-size:20px;font-weight:800;border-radius:9px;padding:3px 5px;font-variant-numeric:tabular-nums}
+.hm-pp3 .hm-pp-dl{font-size:15px;font-weight:700;color:#fff;background:#1F5A7E;border-radius:8px;padding:4px 14px}
+.hm-pp3 .hm-pp-b.hm-pp-bv{background:#4F78A8}
+@media (max-width:640px){.hm-pp.hm-pp3 img.hm-pp-letter{display:none}.hm-pp3 .hm-pp-r{order:-1;flex:none;width:100%}.hm-pp3 .hm-pp-r img.hm-pp-clap{max-width:200px;margin:-6px 0 -4px}}
+/* 電腦版照怯寶構圖：右邊用「信飛進影片」動畫、標題加大加底線、倒數加大；手機版維持場記板動畫 */
+.hm-pp3 .hm-pp-r img.hm-pp-media{display:none;width:100%;max-width:250px;flex:none;border-radius:0}
+@media (min-width:641px){
+.hm-pp3 .hm-pp-r img.hm-pp-clap{display:none}
+.hm-pp3 .hm-pp-r img.hm-pp-media{display:block}
+.hm-pp.hm-pp3{padding:26px 28px}
+.hm-pp3 .hm-pp-t{align-items:center;text-align:center}
+.hm-pp3 .hm-pp-t b{font-size:clamp(30px,3.6vw,42px);letter-spacing:3px;background:linear-gradient(transparent 68%,rgba(240,196,150,.55) 68%,rgba(240,196,150,.55) 88%,transparent 88%);padding:0 6px}
+.hm-pp3 .hm-pp-r{flex:0 0 28%}
+.hm-pp3 .pv-cd i{min-width:42px;font-size:24px;padding:4px 6px}
+.hm-pp3 .pv-cd span{font-size:14px}
+.hm-pp3 .hm-pp-dl{font-size:16px;padding:5px 18px}
+.hm-pp3 .hm-pp-b.hm-pp-bv{font-size:16px;padding:10px 30px}
+}
+@media (min-width:641px){.hm-pp3 .pp-mob{display:none!important}}
+@media (max-width:640px){.hm-pp3 .pp-desk{display:none!important}}
+/* 首頁筆友計畫（怯寶構圖 v2）：上半部介紹、下半部截止＋倒數＋按鈕 */
+.hm-pp.hm-pp4{display:block;padding:22px 26px 20px}
+.hm-pp4 img{flex:none;width:auto;border-radius:0}
+.pp4-top{display:flex;align-items:center;gap:18px}
+.pp4-letter{width:27%!important;max-width:250px}
+.pp4-media{width:24%!important;max-width:220px}
+.pp4-clap{display:none}
+.pp4-t{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.pp4-tag{font-size:17px;font-weight:800;color:#fff;background:#7C6DB0;border-radius:999px;padding:4px 20px}
+.pp4-vl{font-size:15.5px;font-weight:700;color:#6B5DA0}
+.hm-pp4 b.pp4-h{font-family:var(--display);font-size:clamp(30px,3.8vw,44px);letter-spacing:4px;line-height:1.25;color:var(--ink);background:linear-gradient(transparent 66%,rgba(240,196,150,.5) 66%,rgba(240,196,150,.5) 90%,transparent 90%);padding:0 8px}
+.pp4-q{font-size:16px;color:#5E4A42}
+.pp4-div{display:none}
+.pp4-bot{display:flex;align-items:center;justify-content:center;gap:22px;margin:14px auto 0;max-width:820px;background:rgba(255,255,255,.55);border:1.5px solid #B9AEDC;border-radius:18px;padding:12px 24px}
+.pp4-cal{font-size:40px;line-height:1}
+.pp4-cdw{display:flex;flex-direction:column;align-items:center;gap:6px}
+.pp4-dl{font-size:17px;font-weight:800;color:#1F4E79}
+.hm-pp4 .pv-cd{gap:6px}
+.hm-pp4 .pv-cd span{font-size:14px;color:#4A5D78}
+.hm-pp4 .pv-cd i{font-style:normal;display:inline-block;min-width:44px;text-align:center;background:#4F78A8;color:#fff;font-size:25px;font-weight:800;border-radius:10px;padding:3px 6px;font-variant-numeric:tabular-nums}
+.pp4-sep{width:1px;align-self:stretch;background:#C9C0E6}
+.pp4-btn{background:#2F5F8F;color:#fff;font-weight:800;font-size:17px;border-radius:999px;padding:11px 30px;white-space:nowrap}
+@media (max-width:640px){
+.hm-pp.hm-pp4{padding:16px 16px 18px}
+.pp4-top{flex-direction:column;gap:8px}
+.pp4-letter,.pp4-media{display:none}
+.pp4-clap{display:block;width:72%!important;max-width:260px;margin:-4px auto -2px}
+.pp4-tag{order:1}.pp4-h{order:2}.hm-pp4 b.pp4-h{font-size:34px;letter-spacing:3px}.pp4-vl{order:3}.pp4-q{order:4}
+.pp4-div{display:flex;align-items:center;gap:10px;color:#B9AEDC;font-size:15px;margin:10px 0 6px}
+.pp4-div::before,.pp4-div::after{content:"";flex:1;height:1px;background:#C9C0E6}
+.pp4-bot{flex-direction:column;gap:10px;margin:0;background:none;border:0;padding:0;max-width:none}
+.pp4-cal,.pp4-sep,.pp4-hm{display:none}
+.pp4-dl{color:#fff;background:#24577F;border-radius:999px;padding:5px 20px;font-size:16px}
+.hm-pp4 .pv-cd i{min-width:52px;font-size:28px}
+.pp4-btn{display:block;width:100%;text-align:center;font-size:18px;padding:12px 0;box-sizing:border-box}
+}
+/* 首頁「保持聯繫」放大 */
+.hm-contact{padding:44px 0 60px}
+.hm-contact p{font-size:26px;margin-bottom:20px}
+.hm-contact .rooms{gap:14px}
+.hm-contact .rooms a.sc{font-size:18px;font-weight:700;gap:10px;padding:10px 24px 10px 10px}
+.hm-contact .rooms a.sc i{width:40px;height:40px;border-radius:11px}
+.hm-contact .rooms a.sc i svg{width:22px;height:22px}
+.hm-contact .rooms a.sc b{font-size:13px;padding:2px 10px}
+@media (max-width:640px){.hm-contact p{font-size:23px}.hm-contact .rooms{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hm-contact .rooms a.sc{font-size:16px;padding:8px 12px 8px 8px}.hm-contact .rooms a.sc i{width:34px;height:34px}.hm-contact .rooms a.sc i svg{width:19px;height:19px}.hm-contact .rooms a.sc{white-space:nowrap;gap:8px}.hm-contact .rooms a.sc b{font-size:11px;padding:1px 7px;margin-left:0}}
 /* 筆友計畫：影音版預購區塊 */
 .pp-video{margin:14px 0 4px;padding:16px 20px;background:var(--card);border:1.5px dashed var(--line);border-radius:16px;text-align:center}
 .pp-video p{margin:0}
@@ -914,7 +994,7 @@ body:has(#room-home:not([hidden])){background:var(--card)}
         <div class="hm-h"><h2>近期活動</h2></div>
         <div class="hm-list hm-grid" id="hm-list">
         </div>
-        <a class="hm-pp" href="https://docs.google.com/forms/d/e/1FAIpQLSe6nFwoqQarZOfhfHRb49kuWzvI9Rt6cuwFDgkrqPi-LY_wBA/viewform?usp=header" target="_blank" rel="noopener"><img src="img/ev_penpal_hero.png" alt="" width="766" height="520" loading="lazy"><span class="hm-pp-t"><span class="hm-pp-v">🎬 第一季影音版　預購中</span><span class="hm-pp-vl">15 支講解影片・共 75 分鐘以上</span><b>學術筆友計畫</b><span class="hm-pp-q">一封封信，陪伴你的研究與寫作旅程。</span><span class="hm-pp-d">12/12 新梯次啟程</span><span class="hm-pp-b">開始收信 →</span></span></a>
+        <a class="hm-pp hm-pp4" href="https://docs.google.com/forms/d/e/1FAIpQLSe6nFwoqQarZOfhfHRb49kuWzvI9Rt6cuwFDgkrqPi-LY_wBA/viewform?usp=header" target="_blank" rel="noopener"><span class="pp4-top"><img class="pp4-letter" src="img/ev_penpal_hero.png" alt="" width="766" height="520" loading="lazy"><img class="pp4-clap" src="img/pv-clap.gif" alt="小妍老師拿著場記板，介紹第一季影音版" width="443" height="443"><span class="pp4-t"><span class="pp4-tag"><span class="pv-bounce" aria-hidden="true">🎬</span> 第一季影音版</span><span class="pp4-vl">15 支講解影片・共 75 分鐘以上</span><b class="pp4-h">學術筆友計畫</b><span class="pp4-q">一封封信，陪伴你的研究與寫作旅程。</span></span><img class="pp4-media" src="img/pv-media.gif" alt="一封信飛進影片裡：第一季影音版" width="362" height="362"></span><span class="pp4-div" aria-hidden="true">♥</span><span class="pp4-bot"><span class="pp4-cal" aria-hidden="true">⏳</span><span class="pp4-cdw"><span class="pp4-dl">超早鳥優惠｜11/30<span class="pp4-hm"> 23:59</span> 截止</span><span class="cd-n pv-cd js-cd-box"><span><i class="js-cd-d pad2">00</i>天</span><span><i class="js-cd-h">00</i>時</span><span><i class="js-cd-m">00</i>分</span></span></span><span class="pp4-sep" aria-hidden="true"></span><span class="pp4-btn">預購影音版 →</span></span></a>
       </div>
     </section>
 
@@ -1178,10 +1258,11 @@ body:has(#room-home:not([hidden])){background:var(--card)}
         <p class="pp-offer-t">💌 <b>學術筆友計畫</b>：兩季共 32 封信，一封一封寄到你的信箱。每封信附學習單，讀完可以直接回信問小妍。</p>
         <div class="pv-strip">
           <div class="pvs-l">
-            <p class="pvs-k">🎬 第一季影音版・超早鳥預購優惠</p>
+            <p class="pvs-k"><span class="pv-bounce" aria-hidden="true">🎬</span> 第一季影音版・超早鳥預購優惠</p>
             <p class="pvs-t">15 支講解影片・<b>共 75 分鐘以上</b></p>
             <p class="pvs-d">預購到 11/30（一）23:59</p>
           </div>
+          <div class="pvs-m"><img src="img/pv-clap.gif" alt="小妍老師拿著場記板，介紹第一季影音版" width="443" height="443"></div>
           <div class="pvs-r">
             <div class="cd-n pv-cd js-cd-box"><span><b class="js-cd-d">0</b>天</span><span><b class="js-cd-h">00</b>時</span><span><b class="js-cd-m">00</b>分</span></div>
             <a class="pvs-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe6nFwoqQarZOfhfHRb49kuWzvI9Rt6cuwFDgkrqPi-LY_wBA/viewform?usp=header" target="_blank" rel="noopener">預購影音版 →</a>
@@ -2178,7 +2259,7 @@ var EVENTS = [
     price:"NT$555", seats:"線上・Google Meet", fit:"即將學位口試、計畫書口試的碩博士生，以及要在研討會做口頭發表的人", status:"", end:"2026-12-26T22:00:00+08:00", form:"https://docs.google.com/forms/d/e/1FAIpQLSdYtMGNNLTQpnxt1QPjGO2IHiFaXDQmLL8OQbSTzPs_5Xy_4w/viewform", home:true },
   { id:"ws-0109", date:"1/9", wd:"（六）", time:"19:00–22:00", name:"文獻整合實戰班", sub:"把讀過的文獻，整理成有觀點的文獻探討",
     price:"NT$1,111", seats:"限額 15 人", fit:"文獻很多卻整合不起來、想用 AI 又怕寫錯的你", status:"", end:"2027-01-09T22:00:00+08:00", form:"ws", home:true },
-  { id:"prep-imrad", date:"1/15", wd:"（五）", time:"20:00–22:00", name:"AI 輔助研究", sub:"從 IMRaD 掌握論文的整體架構",
+  { id:"prep-imrad", date:"1/15", wd:"（五）", time:"20:00–22:00", name:"AI 輔助研究", sub:"從文獻探討、研究思考到 IMRaD 學術寫作，讓 AI 變成研究超能力。",
     price:"NT$555", seats:"限額 15 人", fit:"想掌握論文整體架構的碩博士生", status:"", end:"2027-01-15T22:00:00+08:00", form:"https://docs.google.com/forms/d/e/1FAIpQLSdYtMGNNLTQpnxt1QPjGO2IHiFaXDQmLL8OQbSTzPs_5Xy_4w/viewform", home:true },
   { id:"ws-0130", date:"1/30", wd:"（六）", time:"19:00–22:00", name:"知識型自媒體經營實戰班", sub:"從個人品牌、AI 內容創作到知識變現，將你的專業轉化為一門生意",
     price:"", seats:"", fit:"想經營個人品牌或知識型副業的研究生、教育工作者與創作者", status:"", end:"2027-01-30T22:00:00+08:00", form:"https://portaly.cc/ciyatsu/product/sTq70Q1eeZOA5O86fEsW", home:true }
@@ -2224,7 +2305,7 @@ var EVENTS = [
     if(!st){ boxes.forEach(function(b){b.hidden=true;}); document.querySelectorAll('.js-cd-short').forEach(function(x){x.textContent='12/12（六）・12/14（一）開始';}); return; }
     var t=Math.floor((st.end-now)/1000), d=Math.floor(t/86400), h=Math.floor(t%86400/3600), m=Math.floor(t%3600/60), s=t%60;
     document.querySelectorAll('.js-cd-label').forEach(function(x){x.textContent=st.label;});
-    document.querySelectorAll('.js-cd-d').forEach(function(x){x.textContent=d;});
+    document.querySelectorAll('.js-cd-d').forEach(function(x){x.textContent=x.classList.contains('pad2')?pad(d):d;});
     document.querySelectorAll('.js-cd-h').forEach(function(x){x.textContent=pad(h);});
     document.querySelectorAll('.js-cd-m').forEach(function(x){x.textContent=pad(m);});
     document.querySelectorAll('.js-cd-s').forEach(function(x){x.textContent=pad(s);});
@@ -2329,5 +2410,6 @@ document.querySelectorAll(".ss-tab").forEach(function(b){b.addEventListener("cli
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ var open=[].some.call(document.querySelectorAll('.js-modal-box'),function(m){return !m.hidden;}); if(open) closeAll(); } });
 })();
 </script>
+
 </body>
 </html>
